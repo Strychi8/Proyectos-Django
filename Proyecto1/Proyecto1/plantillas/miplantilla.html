@@ -1,0 +1,37 @@
+<html>
+    <body>
+
+        {% include "superior/barra.html" %}
+
+        <h2 style="color:dodgerblue">
+          Aprendiendo Django y Python
+        </h2>
+        
+         {% if nombre_persona == 'Profesor Carlos' %}
+
+         <p>El curso lo imparte el profesor titular</p>
+         {% else %}
+
+         <p>El curso lo imparte el profesor suplente</p>
+
+         {% endif %}
+
+        <p>El nombre del profesor es: {{nombre_persona.upper}} {{apellido_persona.upper}}</p>
+        <p>Fecha a dia de hoy: {{momento_actual.day}} / {{momento_actual.month}} / {{momento_actual.year}}</p>
+        <p><strong> Temas del curso: </strong></p>
+        <p>
+            <ul>
+            {% if temas%}
+               {% for elTema in temas %}
+
+                    <li>{{elTema|first}}</li>
+                
+               {% endfor %}
+            {% else %}
+               <p>No hay elementos que mostrar</p>
+            {% endif %}
+            </ul>
+
+        </p>
+    </body>
+</html>
