@@ -56,13 +56,13 @@ export function TaskFormPage() {
         <div className='max-w-x1 mx-auto'>
             <form onSubmit={onSubmit}>
                 <input type="text"
-                    placeholder="title"
+                    placeholder="Titulo"
                     {...register("title", { required: true })}
                     className='bg-zinc-700 p-3 rounded-lg block w-full mb-3'
                 />
                 {errors.title && <span>El titulo es requerido</span>}
                 <textarea rows="3"
-                    placeholder="Description"
+                    placeholder="Descripcion"
                     {...register("description", { required: true })}
                     className='bg-zinc-700 p-3 rounded-lg block w-full mb-3'
                 ></textarea>
